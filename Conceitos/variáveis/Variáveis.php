@@ -3,8 +3,16 @@
 $nome = "David";
 $idade = 20;
 $salario = 2000.0;
-$Endereço = "Jardas de Alencar";
+$endereco = "Jardas de Alencar";
 
-echo " O ".$nome." fez ".$idade." anos na empresa e agora recebe ".$salario." na empresa.";
+// Melhorando a formatação e a visualização
+echo "------------------------------------------\n";
+echo "Detalhes do Funcionário:\n";
+echo "------------------------------------------\n";
+echo "Nome: $nome\n";
+echo "Idade: $idade anos\n";
+echo "Salário: R$ " . number_format($salario, 2, ',', '.') . "\n";
+echo "Endereço: $endereco\n";
+echo "------------------------------------------\n";
 
 ?>
