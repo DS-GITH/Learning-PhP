@@ -36,4 +36,36 @@ echo "\nTotal de elementos no array 'num' após ordenar: $totalDepois\n";
 echo "\nArray 'num' após ordenar:\n";
 print_r($num);
 
+// Ordenar o array de números de forma decrescente
+rsort($num);
+
+// Exibir o total após ordenar de forma decrescente
+$totalReverse = count($num);
+echo "\nTotal de elementos no array 'num' após ordenar decrescente: $totalReverse\n";
+
+// Exibir o array de números ordenado de forma decrescente
+echo "\nArray 'num' após ordenar decrescente:\n";
+print_r($num);
+
+array_push($num, 6, 7, 8);
+print_r($num);
+rsort($num);
+print_r($num);
+
+array_push($pessoa, "Marcos", "Igor");
+print_r($pessoa);
+rsort($pessoa);
+print_r($pessoa);
+
+$pessoa[e] = "Igor";
+$pessoa[f] = "Marcos";
+print_r($pessoa);
+rsort($pessoa);
+print_r($pessoa);
+
+unset($pessoa[5], $pessoa[2]);
+print_r($pessoa);
+rsort($pessoa);
+print_r($pessoa);
+
 ?>
