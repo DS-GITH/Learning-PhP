@@ -1,0 +1,41 @@
+<?php
+// Função para ler um arquivo CSV e retornar os dados em forma de array
+function lerArquivoCSV($caminhoDoArquivo)
+{
+    $dados = [];
+
+    // Verifica se o arquivo existe
+    if (file_exists($caminhoDoArquivo)) {
+        $arquivo = fopen($caminhoDoArquivo, 'r');
+
+        // Lê cada linha do arquivo como array, separando por vírgulas
+        while (($linha = fgetcsv($arquivo, 0, ',')) !== false) {
+            $dados[] = $linha;
+        }
+
+        fclose($arquivo); // Fecha o arquivo após leitura
+    } else {
+        echo "❌ Arquivo não encontrado. Verifique o caminho digitado.\n";
+    }
+
+    return $dados;
+}
+
+// Caminho do arquivo CSV
+$arquivoCSV = "users.csv";
+
+// Lê os dados do arquivo
+$dadosLidos = lerArquivoCSV($arquivoCSV);
+
+// Exibe os dados no terminal
+if (count($dadosLidos) > 0) {
+    echo "✅ Dados encontrados no arquivo:\n\n";
+
+    foreach ($dadosLidos as $indice => $linha) {
+        echo "Linha " . ($indice + 1) . ": ";
+        echo implode(" | ", $linha) . "\n";
+    }
+
+} else {
+    echo "⚠️ Nenhum dado foi encontrado no arquivo.\n";
+}
