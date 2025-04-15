@@ -1,3 +1,5 @@
 require_once "classe.php";
 
-$c = new classe("André", "Fossa");
+$c = new Pessoa ("André", "Fossa");
+
+echo $c->nome ." quer cagar grosso na " .$c->lugar ." do vizinho";
