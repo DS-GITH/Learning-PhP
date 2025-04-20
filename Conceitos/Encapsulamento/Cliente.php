@@ -1,23 +1,22 @@
 <?php
 
-class Cliente
+trait Cliente
 {
-
-    public string $nome;
+    public string $nomeCliente;
     public string $cpf;
     public string $email;
 
-
-    public function __construct(string $nome, string $cpf, string $email)
+    // Se precisar de um construtor para inicializar os valores
+    public function setCliente(string $nome, string $cpf, string $email): void
     {
-        $this->nome = $nome;
+        $this->nomeCliente = $nome;
         $this->cpf = $cpf;
         $this->email = $email;
     }
 
-    public function exibirDados()
+    public function exibirDados(): void
     {
-        echo "Nome: " . $this->nome . "<br>";
+        echo "Nome: " . $this->nomeCliente . "<br>";
         echo "CPF: " . $this->cpf . "<br>";
         echo "Email: " . $this->email . "<br>";
     }

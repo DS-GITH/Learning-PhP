@@ -1,39 +1,22 @@
 <?php
 
-class Atendente
+trait Atendente
 {
-
-    protected string $nome;
+    protected string $nomeAtendente;
     private string $cargo;
     private float $salario;
 
-    public function __construct(string $nome, string $cargo, float $salario)
+    public function setAtendente(string $nome, string $cargo, float $salario): void
     {
-        $this->nome = $nome;
+        $this->nomeAtendente = $nome;
         $this->cargo = $cargo;
         $this->salario = $salario;
     }
 
-    public function setNome($N): string
+    public function exibirFuncionarios(): void
     {
-        return $this->nome = $N;
-    }
-
-    public function setSalario($S): float
-    {
-        return $this->salario = $S;
-    }
-
-    public function setCargo($C): string
-    {
-        return $this->cargo = $C;
-    }
-
-    public function exibirFuncionarios()
-    {
-        echo "Nome: " . $this->nome . "<br>";
+        echo "Nome: " . $this->nomeAtendente . "<br>";
         echo "Cargo: " . $this->cargo . "<br>";
         echo "Salário: " . $this->salario . "<br>";
     }
-
 }
