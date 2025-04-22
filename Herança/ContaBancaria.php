@@ -3,17 +3,14 @@
 class ContaBancaria
 {
 
-    private string $titular;
+    protected string $titular;
 
-    private float $saldo;
+    protected float $saldo;
 
-    private float $limiteSaque;
-
-    public function __construct(string $titular, float $saldo, float $limiteSaque)
+    public function __construct(string $titular, float $saldo)
     {
         $this->titular = $titular;
         $this->saldo = $saldo;
-        $this->limiteSaque = $limiteSaque;
     }
 
     public function getTitular(): string
@@ -21,12 +18,27 @@ class ContaBancaria
         return $this->titular;
     }
 
+    public function setTitular($titular): string
+    {
+        $this->titular = $titular;
+
+        return $this;
+    }
+
     public function getSaldo(): float
     {
         return $this->saldo;
     }
 
+    public function setSaldo($saldo): string
+    {
+        $this->saldo = $saldo;
+
+        return $this;
+    }
+
     public function sacar( float $valor) {
+        $limiteSaque = 1000; // Definindo um limite de saque padrão
 
         if ($valor > $this->limiteSaque) {
             throw new Exception("Valor do saque excede o limite permitido.");
