@@ -1,6 +1,8 @@
 <?php
 
-class CredenciaisObrigatorias{
+interface CredenciaisObrigatorias
+{
 
-    public function setSenha
+    public function setSenha();
+    public function setNome();
 }
